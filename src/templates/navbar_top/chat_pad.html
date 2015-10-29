@@ -4,7 +4,33 @@
 </div>
 
 <div ui-content-for="nav-right">
-  <a ui-turn-on="shareModalCreate"><i class="fa" ng-class="shareIcon()"></i></a>
+  <!--
+  <div class="dropdown">
+    <i class="fa fa-ellipsis-v dropdown-toggle" id="dropdownProjectMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
+    <ul class="dropdown-menu" aria-labelledby="dropdownProjectMenu">
+      <li><a ui-turn-on="shareModalCreate"><i class="fa" ng-class="shareIcon()"></i></a></li>
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>
+-->
+
+      <div class="btn-group pull-right">
+        <a ui-turn-on="myDropdown1" class="btn">
+          <i class="fa fa-ellipsis-v"></i>
+        </a>
+        <ul ui-state="myDropdown1" class="dropdown-menu ng-hide" ui-outer-click="Ui.turnOff('myDropdown' + idx)" ui-outer-click-if="Ui.active('myDropdown' + idx)" role="menu" ui-show="myDropdown1" ui-turn-off="myDropdown1">
+
+          <li><a>Action</a></li>
+          <li><a>Another action</a></li>
+          <li><a>Something else here</a></li>
+          <li class="divider"></li>
+          <li><a>Separated link</a></li>
+        </ul>
+      </div>
+
 </div>
 
 <div ui-content-for="nav-navigation">
